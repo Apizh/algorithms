@@ -15,7 +15,6 @@
 -- каждый из двух алгоритмов нужно оформить в виде отдельной ф-ции
 -- проставьте сложности каждого выражения в двух ваших алгоритмах
 """
-from numpy import random as rand
 
 
 # Qudratic sort, O(n^2)
@@ -38,7 +37,3 @@ def linear(lst):
     return min_value
 
 
-lst1 = rand.randint(1, 100, size=20).tolist()
-print(sorted(lst1))
-print(quadratic(lst1))
-print(linear(lst1))
