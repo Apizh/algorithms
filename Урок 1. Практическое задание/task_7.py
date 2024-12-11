@@ -68,5 +68,3 @@ print(palindrom_checker('молоко делили ледоколом'))  # True
 print(palindrom_checker('привет'))  # False
 print(palindrom_checker('топот молоко'))  # False
 print(palindrom_checker('потом'))  # False
-sring = 'молокоделилиледоколом'
-print(sring==sring[::-1])  # True)
