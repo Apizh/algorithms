@@ -44,15 +44,20 @@ revers_5 = lambda x: str(x)[::-1]
 
 number = 56214462344432653564423
 
-print(f"Рекурсивный метод без преобразования в тип str : {timeit('revers(number)', globals=globals(), number=1000000)} секунд")
+print(f"Рекурсивный метод без преобразования в тип str: "
+      f"{timeit('revers(number)', globals=globals(), number=1000000)} секунд")
 print(
-    f"Перебор через цикл без преобразования в тип str : {timeit('revers_2(number)', globals=globals(), number=1000000)} секунд")
+    f"Перебор через цикл без преобразования в тип str: "
+    f"{timeit('revers_2(number)', globals=globals(), number=1000000)} секунд")
 print(
-    f"Преобразования в тип str и через срезы разворот в обратном порядке: {timeit('revers_3(number)', globals=globals(), number=1000000)} секунд")
+    f"Преобразования в тип str и через срезы разворот в обратном порядке: "
+    f"{timeit('revers_3(number)', globals=globals(), number=1000000)} секунд")
 print(
-    f"Рекурсивный метод с преобразованием в тип str и разворот с использованием 'lambda' функции: {timeit('revers(number)', globals=globals(), number=1000000)} секунд")
+    f"Рекурсивный метод с преобразованием в тип str и разворот с использованием 'lambda' функции:"
+    f"{timeit('revers(number)', globals=globals(), number=1000000)} секунд")
 print(
-    f"Лямбда-функция с преобразованием в тип str и через срезы разворот в обратном порядке: {timeit('revers_5(number)', globals=globals(), number=1000000)} секунд")
+    f"Лямбда-функция с преобразованием в тип str и через срезы разворот в обратном порядке: "
+    f"{timeit('revers_5(number)', globals=globals(), number=1000000)} секунд")
 
 """
 Методы, использующие строковые срезы, такие как revers_3 и revers_5,
