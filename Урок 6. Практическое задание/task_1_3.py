@@ -29,7 +29,7 @@
 генераторы, numpy, использование слотов, применение del, сериализация и т.д.
 
 Это файл для третьего скрипта
-Взял задание из Урока 3 task_3
+Задание взял из Урок 3, task_3.
 """
 
 """
@@ -67,7 +67,7 @@ def count_memory_usage(func):
     def wrapper(*args, **kwargs):
         mem_before = memory_usage()[0]
         print(f'Время выполнения: {timeit(lambda: func(*args, **kwargs), number=100000)} секунд')
-        result = func(*args, **kwargs)  # Вызываем оригинальную функцию с параметрами
+        result = func(*args, **kwargs)  # Вызываем оригинальную функцию с параметрами.
         print(f'Использовано памяти: {memory_usage()[0] - mem_before} MiB')
         return result
 
@@ -77,18 +77,18 @@ def count_memory_usage(func):
 str_obj = "рара"
 
 
-# Декорируем функцию для подсчета используемой памяти и времени выполнения
+# Декорируем функцию для подсчета используемой памяти и времени выполнения.
 @count_memory_usage
 def get_unique_substrings(str_obj: str) -> int:
     unique_hashes = set()
     N = len(str_obj)
-    # Перебираем все возможные подстроки
+    # Перебираем все возможные подстроки.
     for i in range(N):
         for j in range(i + 1, N + 1):
             substring = str_obj[i:j]
-            # Проверяем является ли это подстрокой
+            # Проверяем является ли это подстрокой.
             if substring != str_obj:
-                # Вычисляем хеш подстроки (используем hashlib для надежного хеширования)
+                # Вычисляем хеш подстроки (используем hashlib для надежного хеширования).
                 hash_value = hashlib.sha256(substring.encode('utf-8')).hexdigest()
                 if hash_value not in unique_hashes:
                     # print(substring)
@@ -99,17 +99,17 @@ def get_unique_substrings(str_obj: str) -> int:
 # print(f"{str_obj} - {get_unique_substrings(str_obj)}  уникальных подстрок")
 
 @count_memory_usage
-def unique_substrings_count(S):
-    unique_hashes = set()  # Множество для хранения уникальных хешей подстрок
+def unique_substrings_count(S: str) -> int:
+    unique_hashes = set()  # Множество для хранения уникальных хешей подстрок.
     N = len(S)
 
-    # Генерация всех возможных подстрок с помощью itertools.combinations
+    # Генерация всех возможных подстрок с помощью itertools.combinations.
     for i, j in itertools.combinations(range(N + 1), 2):
         substring = S[i:j]
-        # Проверяем является ли это подстрокой
+        # Проверяем является ли это подстрокой.
         if substring != S:
-            # Если это часть слова, а не слово целиком
-            # Вычисляем хеш подстроки (используем hashlib для надежного хеширования)
+            # Если это часть слова, а не слово целиком.
+            # Вычисляем хеш подстроки (используем hashlib для надежного хеширования).
             hash_value = hashlib.sha256(substring.encode('utf-8')).hexdigest()
             if hash_value not in unique_hashes:
                 # print(substring)
@@ -118,7 +118,7 @@ def unique_substrings_count(S):
     return len(unique_hashes)
 
 
-# Запуск оригинальной и оптимизированной версий
+# Запуск оригинальной и оптимизированной версий.
 get_unique_substrings(str_obj)
 unique_substrings_count(str_obj)
 """

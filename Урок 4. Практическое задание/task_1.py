@@ -15,7 +15,7 @@
 from timeit import timeit
 
 
-def func_1(nums):
+def func_1(nums: int):
     new_arr = []
     for i in range(len(nums)):
         if nums[i] % 2 == 0:
@@ -23,7 +23,7 @@ def func_1(nums):
     return new_arr
 
 
-def func_2(nums):
+def func_2(nums: int):
     new_arr = []
     for i, j in enumerate(nums):
         if i % 2 == 0:
@@ -31,7 +31,7 @@ def func_2(nums):
     return new_arr
 
 
-def func_3(nums):
+def func_3(nums: int):
     return [i for i, j in enumerate(nums) if i % 2 == 0]
 
 
@@ -47,7 +47,6 @@ print(f"Время выполнения func_2: {time_2} секунд")
 # Замер времени для func_3
 time_3 = timeit('func_3(arr)', globals=globals(), number=1000)
 print(f"Время выполнения func_3: {time_3} секунд")
-
 
 # Аналитика
 """

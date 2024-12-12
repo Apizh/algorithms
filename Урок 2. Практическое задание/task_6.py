@@ -10,7 +10,7 @@
 from random import randint
 
 
-def guess_number(secret_number, attempts_left=10):
+def guess_number(secret_number: int, attempts_left=10) -> None:
     # Базовое условие завершения рекурсии: если попытки закончились
     if attempts_left == 0:
         print(f"Вы не угадали число. Загаданное число было: {secret_number}")

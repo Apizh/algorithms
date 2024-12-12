@@ -12,7 +12,7 @@
 """
 
 
-def sum_series(n, current_term=1.0, sign=1):
+def sum_series(n: int, current_term: float=1.0, sign: int=1):
     # Условие завершения рекурсии: если n <= 0, возвращаем 0
     if n == 0:
         return 0

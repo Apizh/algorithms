@@ -58,7 +58,6 @@ class Hexadecimal:
     Класс для создания списка представления шестнадцатеричных чисел
     в виде списка умножения и сложения.
     """
-    counter = 0
 
     def __init__(self, hex_num: list):
         self.hex_num = hex_num

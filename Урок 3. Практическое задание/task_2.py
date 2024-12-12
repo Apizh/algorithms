@@ -41,7 +41,7 @@ def generate_password_hash(password, salt=None):
 
 
 # Функция для сохранения хеша и соли в файл JSON
-def save_hash_and_salt(filename, password_hash, salt):
+def save_hash_and_salt(filename: str, password_hash, salt):
     data = {
         "password_hash": password_hash,
         "salt": salt.hex()  # Соль сохраняется в виде строки в шестнадцатеричном формате

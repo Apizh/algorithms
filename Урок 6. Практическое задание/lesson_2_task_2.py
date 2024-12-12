@@ -17,7 +17,9 @@
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
 """
-def count_num(number, even, odd):
+
+
+def count_num(number: int, even: int, odd: int) -> tuple[int, int]:
     # базовый случай - число пустое
     if not number:
         return even, odd
@@ -34,6 +36,7 @@ def count_num(number, even, odd):
 
         # рекурсивный вызов
         return count_num(number // 10, even, odd)
+
 
 if __name__ == "__main__":
     try:

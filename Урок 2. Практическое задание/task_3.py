@@ -20,7 +20,7 @@
 """
 
 
-def reverse_number(n):
+def reverse_number(n: str) -> str:
     # Условие завершения рекурсии: если число стало пустым
     if n == '':
         return n

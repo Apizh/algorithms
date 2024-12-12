@@ -53,7 +53,7 @@ number = 12345684987431214465
 
 # Вызываем декоратор для подсчёта памяти
 @count_memory_usage
-def test_count_num(*args):
+def test_count_num(*args) -> tuple[int, int]:
     return count_num(*args)
 
 
@@ -62,7 +62,7 @@ test_count_num(number, 0, 0)
 
 
 @count_memory_usage
-def count_num_optimized(number):
+def count_num_optimized(number: str) -> tuple[int, int]:
     odd = sum(1 for i in number if i in '13579')
     return len(number) - odd, odd
 

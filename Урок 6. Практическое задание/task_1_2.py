@@ -29,7 +29,7 @@
 генераторы, numpy, использование слотов, применение del, сериализация и т.д.
 
 Это файл для второго скрипта
-Задание взято из урока 5, task_1
+Задание взял из Урок 5, task_1.
 """
 
 """
@@ -84,7 +84,7 @@ for i in range(num_of_companies):
 """
 
 
-# Создаем функцию-обертку, которая будет измерять и выводить использование памяти
+# Создаем функцию-обертку, которая будет измерять и выводить использование памяти.
 def count_memory_usage(func):
     def wrapper(*args, **kwargs):
         mem_before = memory_usage()[0]
@@ -97,32 +97,33 @@ def count_memory_usage(func):
 
 
 # Оборачиваем цикл из решенного задания в функцию и декорируем для измерения
-# потребляемой памяти и времени выполнения
+# потребляемой памяти и времени выполнения.
 @count_memory_usage
 def divide_by_average_revenue():
-    # Получение и вывод в консоль средней годовой прибыли
+    # Получение и вывод в консоль средней годовой прибыли.
     average_companies = sum(dictionary.values()) / num_of_companies
     # print(f"Средняя годовая прибыль всех предприятий: {average_companies}")
 
-    # Поиск и вывод в консоль предприятий с прибылью выше среднего
+    # Поиск и вывод в консоль предприятий с прибылью выше среднего.
     find_above_average = [name for name, profit in dictionary.items() if profit > average_companies]
     find_above_average = f"Предприятия, с прибылью выше среднего значения: {', '.join(find_above_average)}"
 
-    # Поиск и вывод в консоль предприятий с прибылью ниже среднего
+    # Поиск и вывод в консоль предприятий с прибылью ниже среднего.
     find_below_average = [name for name, profit in dictionary.items() if profit < average_companies]
     find_below_average = f"Предприятия, с прибылью ниже среднего значения: {', '.join(find_below_average)}"
     return find_above_average, find_below_average
 
+
 # Оптимизированная версия с предварительно созданными списками и
-# с использованием одного цикла для обхода
+# с использованием одного цикла для обхода.
 @count_memory_usage
 def divide_by_average_revenue_optimized():
     # Получение средней годовой прибыли
     average_companies = sum(dictionary.values()) / num_of_companies
-    # Списки для хранения данных о предприятиях с прибылью выше и ниже среднего
+    # Списки для хранения данных о предприятиях с прибылью выше и ниже среднего.
     above_average, below_average = [], []
-    # Посик предприятий с прибылью выше среднего
-    for name,profit in dictionary.items():
+    # Перебор в цикле и распределение предприятий по спискам.
+    for name, profit in dictionary.items():
         if profit > average_companies:
             above_average.append(name)
         else:
@@ -132,12 +133,10 @@ def divide_by_average_revenue_optimized():
     return above_average, below_average
 
 
-
-# Запуск исходной версии
+# Запуск исходной версии.
 divide_by_average_revenue()
-# Запуск оптимизированной версии с использованием filter
+# Запуск оптимизированной версии с использованием filter.
 divide_by_average_revenue_optimized()
-
 
 """
 Можно заметить, что использование двух списков для хранения названий предприятий

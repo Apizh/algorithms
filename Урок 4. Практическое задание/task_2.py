@@ -16,7 +16,7 @@ from timeit import timeit
 from random import randint
 
 
-def recursive_reverse(number):
+def recursive_reverse(number: int) -> str:
     if number == 0:
         return str(number % 10)
     return f'{str(number % 10)}{recursive_reverse(number // 10)}'
@@ -58,7 +58,7 @@ def memoize(f):
 
 
 @memoize
-def recursive_reverse_mem(number):
+def recursive_reverse_mem(number: int):
     if number == 0:
         return ''
     return f'{str(number % 10)}{recursive_reverse_mem(number // 10)}'
